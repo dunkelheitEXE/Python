@@ -6,3 +6,4 @@ seaborn
 numpy
 scipy
 pandas
+ipykernel
