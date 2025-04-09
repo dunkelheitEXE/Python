@@ -1,6 +1,37 @@
 import requests
 from bs4 import BeautifulSoup
 
+# class SearchingClass:
+#     url = None
+#     web = None
+
+#     def __init__ (self, url, web):
+#         self.url = url
+#         self.web = web
+    
+#     def get_data(self, articleTag, articleClass, headerTag, pictureTag, descriptionTag, authorTag, dateTag, insideLinkTag):
+#         array = []
+#         insideLinks = []
+#         response = requests.get(self.url)
+#         soup = BeautifulSoup(response.text, 'html.parser')
+
+#         articles = soup.find_all(articleTag, class_ = articleClass)
+
+#         for article in articles:
+#             array.append([
+#                 article.select_one(headerTag).text.strip(),
+#                 article.select_one(pictureTag)['src'],
+#                 article.select_one(authorTag).text.strip(),
+#                 article.select_one(dateTag)['datetime'],
+#                 article.select_one(pictureTag)['src'],
+#                 '#d17a46'
+#             ])
+
+#             insideLinks.append(self.web + article.select_one(insideLinkTag)['href'])
+
+#         for link in insideLinks:
+#             response_link = requests.get(link)
+#             soup_link = BeautifulSoup()        
 
 
 def devol():
