@@ -22,7 +22,18 @@ result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range="Hoja 1").execut
 #Debe ser una matriz por eso el doble [[]] 
 values = result.get('values', [])
 
-to_send = sc.devol()
+font_one = sc.SearchingClass(url='https://elpais.com/noticias/tecnologia-financiera/', web="")
+
+to_send = font_one.get_data(
+    articleTag='article',
+    articleClass='c',
+    headerTag='header.c_h',
+    pictureTag='article img',
+    descriptionTag='div.a_c.clearfix',
+    authorTag='div.c_a',
+    dateTag='div.c_a span.c_a_t time',
+    insideLinkTag='h2.c_t a'
+)
 
 request = sheet.values().append(spreadsheetId = SPREADSHEET_ID, range='hoja 1', valueInputOption='USER_ENTERED', body={'values':to_send}).execute()
 print("Finalizado")
