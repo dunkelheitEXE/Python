@@ -18,20 +18,16 @@ class SearchingClass:
         articles = soup.find_all(articleTag, class_ = articleClass)
 
         for article in articles:
-            try:
-                array.append([
-                    article.select_one(headerTag).text.strip(),
-                    article.select_one(pictureTag)['src'],
-                    article.select_one(authorTag).text.strip(),
-                    article.select_one(dateTag)['datetime'],
-                    article.select_one(pictureTag)['src'],
-                    '#d17a46'
-                ])
-                print(article.select_one(pictureTag)['src'])
+            array.append([
+                article.select_one(headerTag).text.strip(),
+                article.select_one(pictureTag)['src'],
+                article.select_one(authorTag).text.strip(),
+                article.select_one(dateTag)['datetime'],
+                article.select_one(pictureTag)['src'],
+                '#d17a46'
+            ])
 
-                insideLinks.append(self.web + article.select_one(insideLinkTag)['href'])
-            except TypeError:
-                break
+            insideLinks.append(self.web + article.select_one(insideLinkTag)['href'])
 
         counter = 0
         for link in insideLinks:
@@ -43,7 +39,7 @@ class SearchingClass:
             
             array[counter].insert(2, content)
             array[counter].insert(5, summary)
-        
+            counter+=1
         return array
             
             
